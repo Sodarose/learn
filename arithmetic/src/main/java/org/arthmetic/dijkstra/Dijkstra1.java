@@ -43,6 +43,7 @@ public class Dijkstra1 {
         while (!points.isEmpty()) {
             int point = -1;
             int distance = Integer.MAX_VALUE;
+            // 遍历所有的点
             for (int p : points) {
                 // start到P点的距离
                 int tempDistance = map[start][p];

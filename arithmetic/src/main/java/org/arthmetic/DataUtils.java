@@ -6,4 +6,5 @@ package org.arthmetic;
  * @Description:
  */
 public class DataUtils {
+
 }
