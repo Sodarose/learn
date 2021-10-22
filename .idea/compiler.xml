@@ -7,8 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="arithmetic" />
-        <module name="sharedata" />
+        <module name="datashare" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="sharedata" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
