@@ -43,7 +43,7 @@ public class WServer {
             }
         });
         // 绑定端口
-        ChannelFuture channelFuture = serverBootstrap.bind(8080);
+        ChannelFuture channelFuture = serverBootstrap.bind("127.0.0.1",8080);
         channelFuture.addListener(new GenericFutureListener<Future<? super Void>>() {
             public void operationComplete(Future<? super Void> future) throws Exception {
                 if (future.isSuccess()) {
