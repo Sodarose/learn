@@ -10,4 +10,8 @@ public class RpcResponseFuture<R> {
     public void addListener(RpcListener rRpcListener) {
 
     }
+
+    public void set(R data) {
+
+    }
 }

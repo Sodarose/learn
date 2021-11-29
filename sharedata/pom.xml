@@ -2,8 +2,15 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
 
+    <!--基本信息-->
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>sharedata</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>sharedata</name>
+
+    <!--继承信息-->
     <parent>
         <groupId>org.example</groupId>
         <artifactId>learn</artifactId>
@@ -11,21 +18,18 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>sharedata</artifactId>
-    <version>1.0-SNAPSHOT</version>
-
-    <name>sharedata</name>
-
+    <!--版本信息-->
     <properties>
-
+        <netty.version>4.1.69.Final</netty.version>
     </properties>
 
+    <!--依赖信息-->
     <dependencies>
         <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-            <version>4.1.69.Final</version>
+            <version>${netty.version}</version>
         </dependency>
     </dependencies>
 

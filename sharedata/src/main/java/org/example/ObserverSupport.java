@@ -6,4 +6,8 @@ package org.example;
  * @Description:
  */
 public class ObserverSupport<L> {
+    public void attachForever(L syncRpc) {
+
+
+    }
 }

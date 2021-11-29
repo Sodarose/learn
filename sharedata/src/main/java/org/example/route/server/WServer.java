@@ -26,12 +26,12 @@ public class WServer {
         // 设置服务端配置
         serverBootstrap
                 .group(bossGroup, workerGroup) // 线程组
-                .channel(NioServerSocketChannel.class)
-                .option(ChannelOption.ALLOCATOR, UnpooledByteBufAllocator.DEFAULT)
+                .channel(NioServerSocketChannel.class);
+ /*               .option(ChannelOption.ALLOCATOR, UnpooledByteBufAllocator.DEFAULT)
                 .option(ChannelOption.SO_BACKLOG, 1024)
                 .childOption(ChannelOption.TCP_NODELAY, true)
                 .childOption(ChannelOption.SO_RCVBUF, 1024 * 32)
-                .childOption(ChannelOption.SO_SNDBUF, 1024 * 32);
+                .childOption(ChannelOption.SO_SNDBUF, 1024 * 32);*/
         // 绑定处理器
         serverBootstrap.handler(new LoggingHandler());
         serverBootstrap.childHandler(new ChannelInitializer<Channel>() {

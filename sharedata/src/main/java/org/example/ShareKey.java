@@ -13,4 +13,12 @@ public class ShareKey {
     public int getShareUid() {
         return 0;
     }
+
+    public int getSlaveRouteId() {
+        return 0;
+    }
+
+    public int getDataUid() {
+        return 0;
+    }
 }

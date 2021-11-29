@@ -22,6 +22,19 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>sharedata</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>arithmetic</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
