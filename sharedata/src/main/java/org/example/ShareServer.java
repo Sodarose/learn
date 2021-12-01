@@ -36,7 +36,7 @@ public class ShareServer<SyncRpc, Data extends SyncRpc> {
     private void addSyncClient0(ShareKey shareKey, RpcResponseFuture<Object> future) {
         SyncRpc syncRpc = rpcService.create(syncRpcClass,
                 shareKey.getSlaveRouteId(), shareKey.getDataUid());
-        Client client = new Client(shareKey, syncRpc);7
+        Client client = new Client(shareKey, syncRpc);
         routeTable.addRouteListener(shareKey.getSlaveRouteId(), client);
         syncClient.attachForever(syncRpc);
         routeSyncClientMap.put(shareKey, client);

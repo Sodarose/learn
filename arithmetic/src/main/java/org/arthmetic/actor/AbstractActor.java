@@ -1,5 +1,10 @@
 package org.arthmetic.actor;
 
+import com.google.common.util.concurrent.FutureCallback;
+
+import java.util.concurrent.Executor;
+import java.util.concurrent.Future;
+
 /**
  * 抽象Actor
  *
@@ -8,4 +13,34 @@ package org.arthmetic.actor;
  * @Description:
  */
 public abstract class AbstractActor {
+
+    /**
+     * 邮箱
+     */
+    private MailBox mailBox;
+
+    /**
+     * 消息接受解析器
+     */
+    private Receive.ReceiveFunc receiveFunc;
+
+    public AbstractActor(Executor executor) {
+        this.mailBox = new MailBox(this.getClass(), executor);
+        Receive receive = receive();
+        receiveFunc = receive.getReceiveFunc();
+    }
+
+    abstract Receive receive();
+
+    public void tell(Object msg) {
+        mailBox.addTask(() -> processMsg(msg));
+    }
+
+    public void tell(Executor executor, Object msg) {
+        mailBox.addTask(executor, () -> processMsg(msg));
+    }
+
+    private void processMsg(Object msg) {
+        receiveFunc.receive(msg);
+    }
 }

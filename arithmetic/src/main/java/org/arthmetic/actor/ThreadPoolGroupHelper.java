@@ -1,11 +1,7 @@
 package org.arthmetic.actor;
 
-import io.netty.channel.SingleThreadEventLoop;
-import io.netty.util.concurrent.SingleThreadEventExecutor;
-import sun.management.snmp.util.JvmContextFactory;
-
+import java.util.Random;
 import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
@@ -23,20 +19,29 @@ public class ThreadPoolGroupHelper {
     /**
      * 测试用线程池
      */
-    private static ExecutorService[] executorGroups;
+    private static Executor[] executors;
 
     static {
-        executorGroups = new ExecutorService[8];
-        for (int i = 0; i < executorGroups.length; i++) {
+        executors = new Executor[8];
+        for (int i = 0; i < executors.length; i++) {
             int finalI = i;
-            executorGroups[i] = Executors.newSingleThreadExecutor(new ThreadFactory() {
+            executors[i] = Executors.newSingleThreadExecutor(new ThreadFactory() {
                 @Override
                 public Thread newThread(Runnable r) {
                     Thread thread = new Thread(r);
-                    thread.setName("单线程池" + finalI);
+                    thread.setName("单线程池:" + finalI);
                     return thread;
                 }
             });
         }
+    }
+
+    public static Executor[] getExecutors() {
+        return executors;
+    }
+
+    public static Executor randomExecutor() {
+        int index = new Random(executors.length).nextInt(executors.length);
+        return executors[index];
     }
 }
