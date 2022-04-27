@@ -10,5 +10,10 @@
         <module name="sharedata" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="x-framework" target="1.8" />
+      <module name="x-parent" target="1.8" />
+      <module name="x-resource" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
