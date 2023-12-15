@@ -1,7 +1,5 @@
 package org.arthmetic.dijkstra;
 
-import javafx.util.Pair;
-
 import java.util.*;
 
 /**

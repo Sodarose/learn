@@ -6,14 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="hotfix-agent" />
         <module name="arithmetic" />
         <module name="sharedata" />
+        <module name="hotfix" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="x-framework" target="1.8" />
-      <module name="x-parent" target="1.8" />
-      <module name="x-resource" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,9 +1,6 @@
 package org.arthmetic.actor;
 
-import com.google.common.util.concurrent.FutureCallback;
-
 import java.util.concurrent.Executor;
-import java.util.concurrent.Future;
 
 /**
  * 抽象Actor
