@@ -1,6 +1,6 @@
 package cn.xinghua.agent;
 
-import java.lang.management.ManagementFactory;
+import cn.xinghua.ScriptHotLoadWatch;
 
 /**
  * @author 26016
@@ -9,11 +9,21 @@ import java.lang.management.ManagementFactory;
  **/
 public class AgentMain {
 
-    public static void main(String[] args) throws InterruptedException {
-        System.err.println("开始");
-        Thread.sleep(100_000);
-        System.err.println(ManagementFactory.getRuntimeMXBean().getName());
-        System.err.println("结束");
+
+    public static void main(String[] args) throws Exception {
+        // 启动监听
+        ScriptHotLoadWatch.start("C:\\Users\\26016\\IdeaProjects\\learn\\hotfix-agent\\target\\hotfix-agent-1.0-SNAPSHOT.jar", "C:\\Users\\26016\\IdeaProjects\\learn\\hotfix\\src\\main\\resources\\script");
+        new Thread(() -> {
+            try {
+                while (true) {
+                    Thread.sleep(5_000);
+                    TestA.print();
+                }
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }).start();
+        Thread.sleep(1000_000);
     }
 
 }

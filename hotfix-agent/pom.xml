@@ -11,6 +11,12 @@
 
     <artifactId>hotfix-agent</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm</artifactId>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
